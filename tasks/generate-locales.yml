@@ -2,11 +2,8 @@
 - name: Get current locales
   become: true
   shell: locale -a
+  changed_when: false
   register: installed_locales
-  
-- name: Debug 
-  debug:
-    var: installed_locales
 
 - name: Generate locales
   become: true
