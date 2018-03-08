@@ -10,4 +10,4 @@
   shell: locale-gen {{ item }}
   when:
     - "{{ item }} not in installed_locales"
-  with_items: required_locales
+  with_items: "{{ required_locales }}"
