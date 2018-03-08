@@ -12,5 +12,5 @@
   become: true
   shell: "locale-gen {{ item }}"
   when:
-    - item|lower not in installed_locales.stdout|lower
+    - item not in installed_locales.stdout_lines
   with_items: "{{ required_locales }}"
