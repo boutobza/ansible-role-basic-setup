@@ -3,6 +3,10 @@
   become: true
   shell: locale -a
   register: installed_locales
+  
+- name: Debug 
+  debug:
+    var: installed_locales
 
 - name: Generate locales
   become: true
