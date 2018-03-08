@@ -3,6 +3,6 @@
   become: true
   pre_tasks:
     - name: "include test variables"
-      include_vars: "{{ role_path }}/tests/vars.yml"
+      include_vars: "roles/role_under_test/tests/vars.yml"
   roles:
     - role_under_test
