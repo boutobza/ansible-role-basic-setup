@@ -7,4 +7,4 @@
     required_locales:
       - de_DE.UTF-8
   roles:
-    - ansible-role-basic-setup
+    - role_under_test
