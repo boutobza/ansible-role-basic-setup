@@ -1,0 +1,7 @@
+---
+additional_software: { }
+required_locales:
+  - en_US
+  - en_US.UTF-8
+  - de_DE
+  - de_DE.UTF-8

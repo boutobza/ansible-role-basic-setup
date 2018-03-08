@@ -1,0 +1,4 @@
+---
+- name: Generate locales
+  become: true
+  shell: locale-gen {{ required_locales | join(" ") }}

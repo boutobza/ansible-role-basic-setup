@@ -1,0 +1,13 @@
+---
+allow_duplicates: false
+dependencies:
+  - { role: gantsign.oh-my-zsh }
+  - { role: staenker.timezone }
+galaxy_info:
+  author: "4fb"
+  description: Installs default packages and generates locales
+  company: "four for business AG"
+  license: "license (BSD, MIT)"
+  min_ansible_version: 1.4
+  galaxy_tags:
+    - system

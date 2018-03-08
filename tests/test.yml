@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: true
+  vars:
+    additional_software:
+      - git
+    required_locales:
+      - de_DE.UTF-8
+  roles:
+    - ansible-role-basic-setup

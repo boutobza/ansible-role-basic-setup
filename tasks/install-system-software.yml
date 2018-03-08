@@ -1,0 +1,20 @@
+---
+- name: Update APT package manager repositories cache
+  become: true
+  changed_when: false
+  apt:
+    update_cache: yes
+
+- name: Update all packages to the latest version
+  become: true
+  changed_when: false
+  apt:
+    upgrade: safe
+
+- name: Install default software via APT
+  become: true
+  apt:
+    name: "{{ item }}"
+    state: latest
+    update_cache: true
+  with_items: "{{ additional_software }}"
