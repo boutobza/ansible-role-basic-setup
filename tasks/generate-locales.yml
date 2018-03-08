@@ -1,5 +1,4 @@
 ---
-
 - name: Get current locales
   become: true
   shell: locale -a
@@ -7,7 +6,7 @@
 
 - name: Generate locales
   become: true
-  shell: locale-gen {{ item }}
+  shell: "locale-gen {{ item }}"
   when:
-    - "{{ item }} not in {{ installed_locales }}"
+    - "{{ item }} not in {{ installed_locales.stdout }}"
   with_items: "{{ required_locales }}"
