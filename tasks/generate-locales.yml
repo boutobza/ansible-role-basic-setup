@@ -8,5 +8,5 @@
   become: true
   shell: "locale-gen {{ item }}"
   when:
-    - "{{ item|lower }} not in {{ installed_locales.stdout|lower }}"
+    - item|lower not in installed_locales.stdout|lower
   with_items: "{{ required_locales }}"
