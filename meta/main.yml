@@ -9,5 +9,11 @@ galaxy_info:
   company: "four for business AG"
   license: "license (BSD, MIT)"
   min_ansible_version: 1.4
+  github_branch: master
+  platforms:
+    - name: Ubuntu
+      versions:
+        - trusty
+        - xenial
   galaxy_tags:
     - system
