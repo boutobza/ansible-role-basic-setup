@@ -1,6 +1,8 @@
 ---
 - hosts: all
   become: true
-  include_vars: "{{ role_path }}/tests/vars.yml"
+  pre_tasks:
+    - name: "include test variables"
+      include_vars: "{{ role_path }}/tests/vars.yml"
   roles:
     - role_under_test
