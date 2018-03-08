@@ -1,4 +1,13 @@
 ---
+
+- name: Get current locales
+  become: true
+  shell: locale -a
+  register: installed_locales
+
 - name: Generate locales
   become: true
-  shell: locale-gen {{ required_locales | join(" ") }}
+  shell: locale-gen {{ item }}
+  when:
+    -  item not in installed_locales
+  with_items: required_locales
