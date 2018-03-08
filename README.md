@@ -1,4 +1,6 @@
-# Ansible Role: Ansible Base Setup
+# Ansible Role: Ansible Basic Setup
+
+[![Build Status](https://api.travis-ci.org/fourforbusiness/ansible-role-basic-setup.svg?branch=master)](https://api.travis-ci.org/fourforbusiness/ansible-role-basic-setup)
 
 Executes tasks that have to be executed on any system used.
 Installs [ZSH](https://wiki.ubuntuusers.de/Zsh/) with [OhMyZSH](http://ohmyz.sh/) and sets the timezone (defaults to `Europe/Berlin`)
@@ -12,11 +14,11 @@ Installs [ZSH](https://wiki.ubuntuusers.de/Zsh/) with [OhMyZSH](http://ohmyz.sh/
 
 ## Requirements
 
-Ubuntu min. version 16.04
+Ubuntu min. version 14.04
 
 ## Role Variables
 
-Available variables are listed below, along with default values (see `defaults/main.yml`):
+Available variables are listed below, for default values see `defaults/main.yml`:
 
 *`additional_software`*:
 Names of the APT packages to install at the beginning of the provisioning
