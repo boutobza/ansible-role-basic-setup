@@ -1,0 +1,9 @@
+---
+additional_software:
+  - git
+required_locales:
+  - de_DE.UTF-8
+users:
+  - username: root
+    oh_my_zsh:
+      theme: robbyrussell
