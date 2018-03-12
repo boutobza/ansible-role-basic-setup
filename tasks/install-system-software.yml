@@ -1,23 +1,13 @@
 ---
-- name: Update APT package manager repositories cache
+- name: Update APT Cache
   become: true
   changed_when: false
   apt:
-    force_apt_get: true
     update_cache: yes
 
-- name: Update all packages to the latest version
+- name: Install software
   become: true
-  changed_when: false
-  apt:
-    force_apt_get: true
-    upgrade: safe
-
-- name: Install default software via APT-get
-  become: true
-  apt:
-    force_apt_get: true
+  package:
     name: "{{ item }}"
     state: latest
-    update_cache: true
   with_items: "{{ additional_software }}"

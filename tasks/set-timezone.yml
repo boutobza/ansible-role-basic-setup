@@ -1,13 +1,14 @@
 ---
 - name: idempotency check
-  shell: cat etc/timezone
+  shell: cat /etc/timezone
   register: timezone_check
+  changed_when: false
   
 - name: delete timezone file if content does not match desired timezone
   file:
     path: /etc/timezone
     state: absent
-  when: timezone_check.stdout != {{ timezone }}
+  when: timezone_check.stdout != timezone
   register: timezone_not_set
   
 - name: disable current localtime
