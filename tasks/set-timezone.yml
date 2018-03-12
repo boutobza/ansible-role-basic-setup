@@ -1,18 +1,32 @@
 ---
-- name: disable localtime (it would overwrite /etc/timezone)
+- name: idempotency check: etc/timezone
+  shell: cat etc/timezone
+  register: timezone_check
+  
+- name: delete timezone file if content does not match desired timezone
+  file:
+    path: /etc/timezone
+    state: absent
+  when: timezone_check.stdout != {{ timezone }}
+  register: timezone_not_set
+  
+- name: disable current localtime
   become: true
   shell: unlink /etc/localtime
-  changed_when: false
+  when: timezone_not_set.changed
   
 - name: write timezone file
-  copy:
+  lineinfile:
     dest: /etc/timezone
+    create: true
     owner: root
     group: root
     mode: 0644
     backup: no
-    content: "{{ timezone }}"
+    line: "{{ timezone }}"
+  when: timezone_not_set.changed
     
 - name: reconfigure timezone
   become: true
-  shell: dpkg-reconfigure --frontend noninteractive tzdata
+  shell: "dpkg-reconfigure --frontend noninteractive tzdata"
+  when: timezone_not_set.changed
