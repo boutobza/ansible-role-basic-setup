@@ -4,5 +4,27 @@
   pre_tasks:
     - name: "include test variables"
       include_vars: "test_vars.yml"
+    - name: Update APT package manager repositories cache
+      become: true
+      changed_when: false
+      apt:
+        force_apt_get: true
+        update_cache: yes
+
+    - name: Update all packages to the latest version
+      become: true
+      changed_when: false
+      apt:
+        force_apt_get: true
+        upgrade: safe
+
+    - name: Install default software via APT-get
+      become: true
+      apt:
+        force_apt_get: true
+        name: "{{ item }}"
+        state: latest
+        update_cache: true
+      with_items: "{{ additional_software }}"
   roles:
     - role_under_test

@@ -1,7 +1,7 @@
 ---
 allow_duplicates: false
 dependencies:
-  - { role: fourforbusiness.oh-my-zsh }
+  - { role: fourforbusiness.oh-my-zsh, become: true }
   - { role: staenker.timezone }
 galaxy_info:
   author: "4fb"
