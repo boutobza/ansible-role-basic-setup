@@ -1,5 +1,6 @@
 ---
 additional_software: { }
+timezone: 'Europe/Berlin'
 required_locales:
   - en_US
   - en_US.UTF-8
