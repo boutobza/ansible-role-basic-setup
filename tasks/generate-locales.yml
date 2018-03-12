@@ -1,4 +1,12 @@
 ---
+- name: Ensure locales is installed
+  become: true
+  apt:
+    force_apt_get: true
+    name: locales
+    state: latest
+    update_cache: true
+
 - name: Get current locales
   become: true
   shell: locale -a
