@@ -1,5 +1,5 @@
 ---
-- name: idempotency check: etc/timezone
+- name: idempotency check
   shell: cat etc/timezone
   register: timezone_check
   
