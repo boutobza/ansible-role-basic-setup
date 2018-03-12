@@ -1,0 +1,18 @@
+---
+- name: disable localtime (it would overwrite /etc/timezone)
+  become: true
+  shell: unlink /etc/localtime
+  changed_when: false
+  
+- name: write timezone file
+  copy:
+    dest: /etc/timezone
+    owner: root
+    group: root
+    mode: 0644
+    backup: no
+    content: "{{ timezone }}"
+    
+- name: reconfigure timezone
+  become: true
+  shell: dpkg-reconfigure --frontend noninteractive tzdata
