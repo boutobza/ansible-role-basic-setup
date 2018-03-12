@@ -1,4 +1,4 @@
 ---
 - include_tasks: install-system-software.yml
 - include_tasks: generate-locales.yml
-- include_tasks: set-timezon.yml
+- include_tasks: set-timezone.yml
