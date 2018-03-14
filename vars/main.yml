@@ -2,24 +2,3 @@
 # staenker.timezone
 # --------------------------------
 timezone: Europe/Berlin
-# --------------------------------
-# gantsign.oh-my-zsh
-# --------------------------------
-oh_my_zsh_theme: gnzh
-oh_my_zsh_plugins:
-  - git
-  - npm
-  - node
-  - ssh-agent
-  - sudo
-  - symfony2
-  - yarn
-  - Composer
-  - debian
-users:
-  - username: root
-    oh_my_zsh:
-      theme: robbyrussell
-  - username: vagrant
-    oh_my_zsh:
-      theme: gnzh
