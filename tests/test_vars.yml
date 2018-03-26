@@ -6,7 +6,7 @@ required_locales:
   - de_DE
   - de_DE.utf8
   - en_US
-  - en_US.UTF-8
+  - en_US.utf8
 users:
   - username: root
     oh_my_zsh:
