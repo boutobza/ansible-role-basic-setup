@@ -10,4 +10,4 @@
   package:
     name: "{{ item }}"
     state: latest
-  with_items: "{{ additional_software }}"
+  with_items: "{{ additional_software + additional_software_other }}"
