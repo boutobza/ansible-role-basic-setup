@@ -28,7 +28,6 @@ Which locales to install on the VM
 
 ## Dependencies
 
-- [staenker.timezone](https://galaxy.ansible.com/staenker/timezone/)
 - [gantsign.oh-my-zsh](https://galaxy.ansible.com/gantsign/oh-my-zsh/)
 
 ## Example Playbook
