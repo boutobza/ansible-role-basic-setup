@@ -1,6 +1,6 @@
 # Ansible Role: Ansible Basic Setup
 
-[![Build Status](https://api.travis-ci.org/fourforbusiness/ansible-role-basic-setup.svg?branch=master)](https://api.travis-ci.org/fourforbusiness/ansible-role-basic-setup)
+[![Build Status](https://api.travis-ci.org/fourforbusiness/ansible-role-basic-setup.svg?branch=master)](https://api.travis-ci.org/fourforbusiness/ansible-role-basic-setup) [![Ansible-Galaxy](https://img.shields.io/ansible/role/24281.svg)](https://galaxy.ansible.com/fourforbusiness/basic-setup/) ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 
 Executes tasks that have to be executed on any system used.
 Installs [ZSH](https://wiki.ubuntuusers.de/Zsh/) with [OhMyZSH](http://ohmyz.sh/) and sets the timezone (defaults to `Europe/Berlin`)
